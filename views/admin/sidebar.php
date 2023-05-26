@@ -52,12 +52,12 @@
     </a>
     <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="">
+        <a href="./disciplina.php">
           <i class="bi bi-circle"></i><span>Ver</span>
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="./addDisciplina.php">
           <i class="bi bi-circle"></i><span>Adicionar</span>
         </a>
       </li>
@@ -70,12 +70,12 @@
     </a>
     <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="">
+        <a href="turma.php">
           <i class="bi bi-circle"></i><span>Ver</span>
         </a>
       </li>
       <li>
-        <a href="">
+        <a href="./addTurma.php">
           <i class="bi bi-circle"></i><span>Adicionar</span>
         </a>
       </li>

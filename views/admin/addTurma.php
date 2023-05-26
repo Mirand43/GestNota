@@ -2,15 +2,18 @@
 
 include "../../dbconfig.php"; 
 
-if (isset($_POST['btn-adddisciplina'])){
-  $descricaodisciplina = $_POST["descricaodisciplina"];
-  $coordenadordisciplina = $_POST["coordenadordisciplina"];
+if (isset($_POST['btn-addTurma'])){
+  $classeTurma = $_POST["classeTurma"];
+  $turnoTurma = $_POST["turnoTurma"];
+  $coordenadorTurma = $_POST["coordenadorTurma"];
+  $disciplinasTurma = $_POST["disciplinasTurma"];
+  $descricaoTurma = $_POST["descricaoTurma"];
 
 /*Enviar dados na base de dados*/
-if($crud->createDisciplina($descricaodisciplina,$coordenadordisciplina)){
-echo "Perfil adicionado";
+if($crud->createTurma($classeTurma,$turnoTurma,$coordenadorTurma,$disciplinasTurma,$descricaoTurma)){
+echo "Turma adicionado";
 }else{
-echo "Perfil não adicionado";
+echo "Turma não adicionado";
 }  
 }
 
@@ -25,10 +28,10 @@ echo "Perfil não adicionado";
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Disciplina</h1>
+            <h1>Turma</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="funcionario.html">Disciplinas</a></li>
+                    <li class="breadcrumb-item"><a href="funcionario.html">Turma</a></li>
                     <li class="breadcrumb-item active">Adicionar</li>
                 </ol>
             </nav>
@@ -40,21 +43,26 @@ echo "Perfil não adicionado";
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Adicionar novo disciplina</h5>
-                            <p>Cadastrar novo disciplina</p>
+                            <h5 class="card-title">Adicionar nova turma</h5>
+                            <p>Cadastrar nova turma</p>
 
                             <!-- Browser Default Validation -->
                             <form method="POST" class="row g-3">
                                 <div class="col-md-4">
-                                    <label for="validationDefault01" class="form-label">Nome da disciplina</label>
+                                    <label for="validationDefault01" class="form-label">Classe</label>
+                                    <input type="number" class="form-control" id="validationDefault01"
+                                        required name="classeTurma">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationDefault01" class="form-label">Turno</label>
                                     <input type="text" class="form-control" id="validationDefault01"
-                                        required name="descricaodisciplina">
+                                        required name="turnoTurma">
                                 </div>
                                 <br>
                                 <br>
                                 <div class="col-md-3">
                                     <label for="validationDefault04" class="form-label">Coordenador</label>
-                                    <select class="form-select" id="validationDefault04" required name="coordenadordisciplina">
+                                    <select class="form-select" id="validationDefault04" required name="coordenadorTurma">
                                         <option selected disabled value="">Selecione o coordenador...</option>
                                         <option value="António Quintas">António Quintas</option>
                                         <option value="Manuel Ndongola">Manuel Ndongola</option>
@@ -63,20 +71,22 @@ echo "Perfil não adicionado";
                                         <option value="Kina Rodrigues">Kina Rodrigues</option>
                                     </select>
                                 </div>
-                                <!-- <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
-                                            required>
-                                        <label class="form-check-label" for="invalidCheck2">
-                                            Agree to terms and conditions
-                                        </label>
-                                    </div>
-                                </div> -->
+
+                                <div class="col-md-6">
+                                    <label for="validationDefault01" class="form-label">Disciplinas</label>
+                                    <input type="text" class="form-control" id="validationDefault01"
+                                        required name="disciplinasTurma">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationDefault01" class="form-label">Descrição</label>
+                                    <input type="text" class="form-control" id="validationDefault01"
+                                        required name="descricaoTurma">
+                                </div>
                                 <div class="col-md-11">
-                                    <button class="btn btn-primary" type="submit" name="btn-adddisciplina">Cadastrar</button>
+                                    <button class="btn btn-primary" type="submit" name="btn-addTurma">Cadastrar</button>
                                 </div>
                                 <div class="col-md-1">
-                                    <a href="alunos.html" class="btn btn-danger">Cancelar</a>
+                                    <a href="./turma.php" class="btn btn-danger">Cancelar</a>
                                 </div>
                             </form>
                             <!-- End Browser Default Validation -->

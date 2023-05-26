@@ -7,10 +7,10 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Disciplina</h1>
+      <h1>Turma</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="funcionario.html">Disciplinas</a></li>
+          <li class="breadcrumb-item"><a href="funcionario.html">Turma</a></li>
           <li class="breadcrumb-item active">Lista</li>
         </ol>
       </nav>
@@ -22,20 +22,25 @@
   
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Tabela de disciplinas</h5>
-                <p>Lista das disciplinas</p>
+                <h5 class="card-title">Tabela de turmas</h5>
+                <p>Lista de turmas</p>
   
                 <!-- Table with stripped rows -->
                 <table class="table datatable">
                   <thead>
                     <tr>
-                      <th scope="col">Descrição</th>
+                      <th scope="col">Nº da turma</th>
+                      <th scope="col">Classe</th>
+                      <th scope="col">Turno</th>
                       <th scope="col">Coordenador</th>
+                      <th scope="col">Disciplinas</th>
+                      <th scope="col">Descrição</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                    <?php $crud-> ComboDisciplina() ?>
+                    <?php $crud-> ComboTurma() ?>
+
                     </tr>
                   </tbody>
                 </table>
